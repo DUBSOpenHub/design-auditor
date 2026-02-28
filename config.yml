@@ -1,0 +1,66 @@
+# Design Auditor Configuration
+# Tunables for the audit pipeline (single source of truth)
+
+audit:
+  # Maximum findings to include in report (ranked by impact)
+  max_findings: 10
+
+  # Design score threshold — below this triggers P1 urgency messaging
+  critical_threshold: 50
+
+  # Lighthouse run count (for median calculation)
+  lighthouse_runs: 3
+
+  # Lighthouse variance threshold — flag as unstable if > this %
+  variance_threshold: 15
+
+  # Page load timeout (seconds)
+  page_timeout: 15
+
+  # Total audit timeout (seconds)
+  audit_timeout: 60
+
+viewports:
+  - width: 1440
+    height: 900
+    label: desktop
+  - width: 768
+    height: 1024
+    label: tablet
+  - width: 375
+    height: 812
+    label: mobile
+
+scoring:
+  # Points per category (must sum to 100)
+  performance: 25
+  cta_effectiveness: 20
+  visual_hierarchy: 15
+  accessibility: 15
+  social_proof: 10
+  mobile_readiness: 10
+  image_optimization: 5
+
+models:
+  # Vision model for layout analysis
+  vision: claude-sonnet-4.6
+
+  # Text model for headline/content analysis
+  text: claude-haiku-4.5
+
+reference:
+  # Path to reference corpus
+  corpus_path: reference-corpus.yml
+
+  # Stale threshold (days) — flag entries older than this
+  stale_days: 90
+
+output:
+  # Where to save audit artifacts
+  output_dir: .audit
+
+  # Screenshot directory (relative to output_dir)
+  screenshot_dir: screenshots
+
+  # Report filename
+  report_file: DESIGN-AUDIT.md

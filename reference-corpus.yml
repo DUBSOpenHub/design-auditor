@@ -1,0 +1,264 @@
+# Design Auditor — Reference Corpus
+# 50 high-converting sites across 5 verticals
+# Each entry: URL, vertical, patterns to learn from, last verified date
+#
+# Usage: The audit agent references these when making recommendations.
+# "Reference: stripe.com/payments — high-contrast CTA above fold with clear value prop"
+#
+# Maintenance: Re-verify URLs quarterly. Flag entries > 90 days old.
+
+verticals:
+  saas:
+    description: "B2B and B2C SaaS landing pages"
+    sites:
+      - url: https://stripe.com/payments
+        patterns: [high-contrast-cta, clear-value-prop, social-proof-logos, clean-whitespace]
+        notes: "Gold standard for fintech SaaS. CTA immediately visible, trust badges prominent."
+
+      - url: https://linear.app
+        patterns: [dark-theme-done-right, product-screenshot-hero, minimal-nav, keyboard-first]
+        notes: "Developer-focused SaaS. Crisp product shots, no stock photos, fast load."
+
+      - url: https://vercel.com
+        patterns: [gradient-hero, clear-pricing-tiers, most-popular-badge, developer-trust]
+        notes: "Strong visual hierarchy in pricing. 'Most Popular' badge on recommended tier."
+
+      - url: https://notion.so
+        patterns: [social-proof-user-count, template-gallery, outcome-headline, clean-typography]
+        notes: "Leads with outcome ('Write. Plan. Organize.'), not features."
+
+      - url: https://figma.com
+        patterns: [interactive-hero, collaboration-social-proof, video-demo, clear-cta-pair]
+        notes: "Primary + secondary CTA pairing. Interactive product demo in hero."
+
+      - url: https://cal.com
+        patterns: [high-contrast-dark-cta, open-source-badge, comparison-table, testimonials-with-avatars]
+        notes: "Dark CTA on light background. Open source social proof. Clear competitor comparison."
+
+      - url: https://resend.com
+        patterns: [code-snippet-hero, developer-focused, minimal-design, api-first-messaging]
+        notes: "Shows the product (code) immediately. No fluff. Developer trust through transparency."
+
+      - url: https://clerk.com
+        patterns: [component-preview-hero, integration-logos, docs-link-prominent, purple-brand]
+        notes: "Live component preview in hero. Integration ecosystem visible immediately."
+
+      - url: https://planetscale.com
+        patterns: [performance-metrics-hero, enterprise-logos, technical-credibility, dark-theme]
+        notes: "Leads with performance numbers. Enterprise trust through logo bar."
+
+      - url: https://supabase.com
+        patterns: [open-source-hero, github-stars, feature-grid, developer-community]
+        notes: "GitHub stars as social proof. Feature comparison grid. Community-driven trust."
+
+  ecommerce:
+    description: "Product pages, storefronts, and D2C landing pages"
+    sites:
+      - url: https://apple.com/iphone
+        patterns: [product-hero-full-bleed, scroll-storytelling, minimal-text, premium-photography]
+        notes: "Master class in scroll-driven narrative. Every section is one idea."
+
+      - url: https://allbirds.com
+        patterns: [sustainability-messaging, product-zoom, material-callouts, lifestyle-photography]
+        notes: "Value prop (sustainability) woven into every section. Clear 'Add to Cart' CTA."
+
+      - url: https://glossier.com
+        patterns: [user-generated-content, pastel-brand, community-reviews, simple-pdp]
+        notes: "UGC as social proof. Reviews front and center. Clean product pages."
+
+      - url: https://warbyparker.com
+        patterns: [virtual-try-on-cta, quiz-funnel, home-try-on, trust-guarantee]
+        notes: "Interactive CTA (virtual try-on) drives engagement. Free trial reduces friction."
+
+      - url: https://everlane.com
+        patterns: [transparent-pricing, factory-story, minimal-pdp, ethical-messaging]
+        notes: "Price transparency as trust signal. 'Why it costs what it costs' breakdown."
+
+      - url: https://casper.com
+        patterns: [trial-period-hero, comparison-chart, review-aggregation, sleep-quiz]
+        notes: "Risk-free trial prominent in hero. Side-by-side product comparison."
+
+      - url: https://away.com
+        patterns: [lifestyle-hero, feature-callouts-on-hover, size-comparison, travel-context]
+        notes: "Product in lifestyle context (travel). Feature details on interaction."
+
+      - url: https://mejuri.com
+        patterns: [grid-layout, quick-add-to-cart, editorial-photography, gifting-cta]
+        notes: "Quick-add reduces friction. Editorial-quality product photography."
+
+      - url: https://brooklinen.com
+        patterns: [bundle-pricing, review-count-hero, material-education, seasonal-cta]
+        notes: "Review count (50,000+) as hero social proof. Bundle savings highlighted."
+
+      - url: https://bombas.com
+        patterns: [mission-driven-hero, donation-counter, product-grid, email-capture]
+        notes: "Mission (donate socks) is the headline. Impact counter as social proof."
+
+  creator:
+    description: "Portfolio sites, personal brands, creator landing pages"
+    sites:
+      - url: https://brianlovin.com
+        patterns: [clean-personal-brand, project-showcase, writing-feed, minimal-nav]
+        notes: "Designer portfolio. Clean layout, project cards with context, writing integration."
+
+      - url: https://leerob.io
+        patterns: [developer-blog, metrics-dashboard, project-links, dark-mode]
+        notes: "Developer portfolio with public metrics. Blog-first personal brand."
+
+      - url: https://www.swyx.io
+        patterns: [content-hub, speaking-section, newsletter-cta, learning-in-public]
+        notes: "Creator landing page organized by content type. Newsletter CTA prominent."
+
+      - url: https://maggieappleton.com
+        patterns: [visual-essays, garden-metaphor, illustrated-content, unique-navigation]
+        notes: "Illustrated content as differentiator. Non-standard nav that works."
+
+      - url: https://joshwcomeau.com
+        patterns: [interactive-tutorials, playful-design, course-cta, newsletter-integration]
+        notes: "Interactive elements in content. Playful personality in design. Course upsell."
+
+      - url: https://paco.me
+        patterns: [minimal-portfolio, animation-craft, project-detail, dark-aesthetic]
+        notes: "Ultra-minimal. Animations add personality without clutter."
+
+      - url: https://rauno.me
+        patterns: [interaction-design-showcase, micro-animations, craft-focus, experimental]
+        notes: "Design portfolio where the site IS the portfolio. Every interaction is deliberate."
+
+      - url: https://linusblog.org
+        patterns: [blog-first, clean-typography, reading-experience, minimal-distraction]
+        notes: "Optimized for reading. Typography-focused. No sidebar clutter."
+
+      - url: https://www.cassie.codes
+        patterns: [animation-portfolio, svg-hero, playful-brand, talk-recordings]
+        notes: "Animated SVG hero. Personality-driven brand. Speaking section with recordings."
+
+      - url: https://chriscoyier.net
+        patterns: [link-aggregation, multi-project, simple-layout, established-voice]
+        notes: "Hub linking to multiple projects. Simple layout for an established creator."
+
+  agency:
+    description: "Agency, consultancy, and service-based landing pages"
+    sites:
+      - url: https://basecamp.com
+        patterns: [opinionated-headline, pricing-simplicity, social-proof-counter, long-form-sales]
+        notes: "One price for everything. Strong opinion in headline. User count social proof."
+
+      - url: https://37signals.com
+        patterns: [manifesto-style, product-portfolio, philosophy-driven, minimal-design]
+        notes: "Philosophy-first company page. Products are secondary to the mission."
+
+      - url: https://ueno.co
+        patterns: [case-study-grid, full-bleed-imagery, client-logos, studio-culture]
+        notes: "Case studies as hero. Full-bleed project images. Client logo bar."
+
+      - url: https://basicagency.com
+        patterns: [video-hero, case-study-focus, bold-typography, dark-aesthetic]
+        notes: "Video background hero. Bold type hierarchy. Case study driven."
+
+      - url: https://fantasy.co
+        patterns: [interactive-portfolio, scroll-animations, enterprise-clients, premium-feel]
+        notes: "Interactive scroll experience. Enterprise client logos. Premium design."
+
+      - url: https://metalab.com
+        patterns: [product-showcase, client-results, team-culture, clear-services]
+        notes: "Products they've built as social proof. Clear service categories."
+
+      - url: https://work.co
+        patterns: [case-study-hero, impact-metrics, enterprise-focus, clean-grid]
+        notes: "Impact metrics on case studies (20% increase, etc.). Enterprise positioning."
+
+      - url: https://pentagram.com
+        patterns: [gallery-layout, project-archive, designer-profiles, minimal-chrome]
+        notes: "Work speaks for itself. Minimal UI chrome. Project-browsing focused."
+
+      - url: https://instrument.com
+        patterns: [video-case-studies, culture-section, capabilities-list, portland-brand]
+        notes: "Video-first case studies. Culture/team prominently featured."
+
+      - url: https://hugeinc.com
+        patterns: [thought-leadership, blog-integration, global-offices, capability-matrix]
+        notes: "Thought leadership content alongside work. Global presence as trust signal."
+
+  devtools:
+    description: "Developer tool landing pages, API products, infrastructure"
+    sites:
+      - url: https://github.com
+        patterns: [globe-animation-hero, stats-social-proof, enterprise-section, community-metrics]
+        notes: "Massive social proof (100M+ devs). Animated hero. Enterprise + community dual audience."
+
+      - url: https://tailwindcss.com
+        patterns: [code-example-hero, utility-demo, documentation-link, community-showcase]
+        notes: "Shows the product (code) immediately. Utility-first demonstrated in hero."
+
+      - url: https://astro.build
+        patterns: [performance-benchmark, framework-comparison, island-architecture, quick-start]
+        notes: "Performance benchmarks as hero. Framework comparison table. Quick-start CTA."
+
+      - url: https://turso.tech
+        patterns: [database-metrics, edge-messaging, pricing-transparency, developer-experience]
+        notes: "Performance metrics in hero. Edge computing narrative. Developer-first."
+
+      - url: https://railway.app
+        patterns: [deploy-demo, pricing-calculator, template-gallery, instant-deploy-cta]
+        notes: "Live deploy demo. Interactive pricing calculator. Template quick-start."
+
+      - url: https://fly.io
+        patterns: [technical-hero, region-map, cli-first, performance-numbers]
+        notes: "Technical messaging for technical audience. Global region visualization."
+
+      - url: https://deno.com
+        patterns: [runtime-comparison, typescript-first, deploy-cta, fresh-framework]
+        notes: "Runtime comparison benchmarks. TypeScript-first messaging. Deploy platform CTA."
+
+      - url: https://bun.sh
+        patterns: [speed-benchmarks, drop-in-replacement, installation-one-liner, performance-charts]
+        notes: "Speed benchmarks as the entire pitch. One-liner install. Performance charts."
+
+      - url: https://neon.tech
+        patterns: [serverless-messaging, branching-demo, postgres-compatibility, free-tier]
+        notes: "Database branching as hero feature. Postgres compatibility prominent. Free tier CTA."
+
+      - url: https://upstash.com
+        patterns: [serverless-pricing, redis-compatibility, global-distribution, pay-per-request]
+        notes: "Pay-per-request pricing transparency. Redis compatibility. Global edge."
+
+# Patterns taxonomy (referenced across all entries)
+patterns:
+  layout:
+    - high-contrast-cta
+    - clear-value-prop
+    - product-screenshot-hero
+    - full-bleed-imagery
+    - grid-layout
+    - scroll-storytelling
+    - dark-theme
+    - minimal-design
+
+  trust:
+    - social-proof-logos
+    - social-proof-counter
+    - testimonials-with-avatars
+    - github-stars
+    - review-count-hero
+    - enterprise-logos
+    - case-study-focus
+    - open-source-badge
+
+  content:
+    - outcome-headline
+    - code-snippet-hero
+    - video-hero
+    - interactive-hero
+    - performance-benchmark
+    - comparison-table
+    - feature-grid
+
+  conversion:
+    - clear-cta-pair
+    - quick-add-to-cart
+    - free-tier
+    - trial-period-hero
+    - newsletter-cta
+    - quiz-funnel
+    - pricing-transparency

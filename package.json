@@ -1,0 +1,15 @@
+{
+  "name": "design-auditor",
+  "version": "0.1.0",
+  "description": "Paste a URL, get ranked fixes to improve conversions. Like Grammarly for landing pages.",
+  "main": "scripts/audit.js",
+  "scripts": {
+    "audit": "node scripts/audit.js",
+    "capture": "node scripts/capture.js"
+  },
+  "keywords": ["design", "audit", "conversion", "landing-page", "lighthouse", "accessibility"],
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.50.0"
+  }
+}
