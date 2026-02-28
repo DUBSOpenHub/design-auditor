@@ -1,0 +1,37 @@
+# Design Auditor — Skill Catalog
+# Metadata for Copilot CLI skill discovery
+
+schema: v1
+
+skill:
+  name: design-auditor
+  version: 0.1.0
+  description: >
+    🔍 Paste a URL, get ranked fixes to improve conversions.
+    Analyzes layout, performance, accessibility, and CTA effectiveness.
+  category: specialist
+  input_format: free-text
+  owner: DUBSOpenHub
+  license: MIT
+
+  files:
+    - SKILL.md
+    - scripts/capture.js
+    - scripts/audit.js
+    - config.yml
+    - reference-corpus.yml
+    - templates/design-audit-template.md
+
+  triggers:
+    - "audit"
+    - "design audit"
+    - "audit local"
+
+  tags:
+    - design
+    - conversion
+    - landing-page
+    - performance
+    - accessibility
+    - lighthouse
+    - ux

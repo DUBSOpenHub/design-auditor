@@ -1,0 +1,94 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate YAML syntax
+        run: |
+          for f in config.yml catalog.yml reference-corpus.yml; do
+            echo "Checking $f..."
+            node -e "const yaml = require('js-yaml'); const fs = require('fs'); yaml.load(fs.readFileSync('$f', 'utf8')); console.log('  ✅ $f is valid YAML')"
+          done
+
+      - name: Validate catalog references
+        run: |
+          node -e "
+            const yaml = require('js-yaml');
+            const fs = require('fs');
+            const catalog = yaml.load(fs.readFileSync('catalog.yml', 'utf8'));
+            let ok = true;
+            for (const f of catalog.skill.files) {
+              if (!fs.existsSync(f)) {
+                console.error('❌ catalog.yml references missing file: ' + f);
+                ok = false;
+              } else {
+                console.log('  ✅ ' + f + ' exists');
+              }
+            }
+            if (!ok) process.exit(1);
+          "
+
+      - name: Validate SKILL.md frontmatter
+        run: |
+          node -e "
+            const fs = require('fs');
+            const content = fs.readFileSync('SKILL.md', 'utf8');
+            if (!content.startsWith('---')) {
+              console.error('❌ SKILL.md must start with YAML frontmatter');
+              process.exit(1);
+            }
+            const end = content.indexOf('---', 3);
+            if (end === -1) {
+              console.error('❌ SKILL.md frontmatter not closed');
+              process.exit(1);
+            }
+            console.log('✅ SKILL.md has valid frontmatter');
+          "
+
+      - name: Validate scoring weights sum to 100
+        run: |
+          node -e "
+            const yaml = require('js-yaml');
+            const fs = require('fs');
+            const config = yaml.load(fs.readFileSync('config.yml', 'utf8'));
+            const scoring = config.scoring;
+            const total = Object.values(scoring).reduce((a, b) => a + b, 0);
+            if (total !== 100) {
+              console.error('❌ Scoring weights sum to ' + total + ', expected 100');
+              process.exit(1);
+            }
+            console.log('✅ Scoring weights sum to 100');
+          "
+
+      - name: Check reference corpus URLs format
+        run: |
+          node -e "
+            const yaml = require('js-yaml');
+            const fs = require('fs');
+            const corpus = yaml.load(fs.readFileSync('reference-corpus.yml', 'utf8'));
+            let count = 0;
+            for (const [vertical, data] of Object.entries(corpus.verticals)) {
+              for (const site of data.sites) {
+                if (!site.url.startsWith('https://')) {
+                  console.error('❌ Non-HTTPS URL in ' + vertical + ': ' + site.url);
+                  process.exit(1);
+                }
+                count++;
+              }
+            }
+            console.log('✅ ' + count + ' reference URLs validated (all HTTPS)');
+          "
