@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Install dependencies
+        run: npm install js-yaml
+
       - name: Validate YAML syntax
         run: |
           for f in config.yml catalog.yml reference-corpus.yml; do
