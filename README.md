@@ -98,3 +98,9 @@ Future integration notes are documented in `docs/dark-factory-v2.md` — describ
 ## License
 
 MIT
+
+---
+
+🐙 Created with 💜 by [@DUBSOpenHub](https://github.com/DUBSOpenHub) with the [GitHub Copilot CLI](https://docs.github.com/copilot/concepts/agents/about-copilot-cli).
+
+Let's build! 🚀✨
