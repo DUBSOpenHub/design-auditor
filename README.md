@@ -4,6 +4,27 @@
 
 Design Auditor analyzes web pages for conversion effectiveness, performance, accessibility, and design quality. It's like Grammarly for landing pages — paste your URL, get told what's hurting your conversions, see exactly how to fix it.
 
+> ### ⚡ One Command. That's It.
+>
+> **Never used the CLI before? No problem.** Follow these 3 steps:
+>
+> **1. Open your terminal**
+> - 🍎 **Mac:** Press `⌘ + Space`, type **Terminal**, hit Enter
+> - 🪟 **Windows:** Press `Win + X`, choose **Terminal** or **PowerShell**
+> - 🐧 **Linux:** Press `Ctrl + Alt + T`
+>
+> **2. Paste this line and press Enter:**
+> ```bash
+> curl -fsSL https://raw.githubusercontent.com/DUBSOpenHub/design-auditor/main/quickstart.sh | bash
+> ```
+> *Already have the CLI? No worries — this detects it and skips straight to adding the skill.*
+>
+> **3. When Copilot opens, type:** `audit https://yoursite.com`
+>
+> That's it — get your ranked fixes! 🔍
+>
+> *Requires an active [Copilot subscription](https://github.com/features/copilot/plans). [Get one here →](https://github.com/features/copilot/plans)*
+
 ## Quick Start
 
 ### As a Copilot CLI Skill
